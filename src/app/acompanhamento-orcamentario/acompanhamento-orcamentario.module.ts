@@ -6,9 +6,7 @@ import { AppMaterialModule } from '../shared/app-material';
 import { AppPrimengModule } from '../shared/app-primeng';
 import { AcompanhamentoOrcamentarioRoutingModule } from './acompanhamento-orcamentario-routing.module';
 import { AcompanhamentoOrcamentarioComponent } from './acompanhamento-orcamentario.component';
-import {
-  FormAcompanhamentoOrcamentarioComponent,
-} from './form-acompanhamento-orcamentario/form-acompanhamento-orcamentario.component';
+import { FormAcompanhamentoOrcamentarioComponent } from './form-acompanhamento-orcamentario/form-acompanhamento-orcamentario.component';
 import { AcompanhamentoOrcamentarioService } from './services';
 
 @NgModule({
