@@ -5,14 +5,16 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppMaterialModule } from '../shared/app-material';
 import { AcompanhamentoOrcamentarioRoutingModule } from './acompanhamento-orcamentario-routing.module';
 import { AcompanhamentoOrcamentarioComponent } from './acompanhamento-orcamentario.component';
+import { AcompanhamentoOrcamentarioService } from './services';
 
 @NgModule({
   imports: [
     CommonModule,
     AcompanhamentoOrcamentarioRoutingModule,
     AppMaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   declarations: [AcompanhamentoOrcamentarioComponent],
+  providers: [AcompanhamentoOrcamentarioService],
 })
 export class AcompanhamentoOrcamentarioModule {}

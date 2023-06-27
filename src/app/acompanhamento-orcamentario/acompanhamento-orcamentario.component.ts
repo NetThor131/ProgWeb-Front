@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AcompanhamentoOrcamentarioService } from './services';
+import { catchError, Observable, of } from 'rxjs';
 
 export interface AcompanhamentoOrcamentario {
   id: number;
@@ -33,7 +35,42 @@ export interface AcompanhamentoOrcamentario {
   styleUrls: ['./acompanhamento-orcamentario.component.css'],
 })
 export class AcompanhamentoOrcamentarioComponent implements OnInit {
-  constructor() {}
+  data$: Observable<AcompanhamentoOrcamentario[]>;
+  displayedColumns = [
+    'id',
+    'exercicio',
+    'tipoCaptacao',
+    'descricaoEsfera',
+    'descricaoOrgao',
+    'descricaoUnidadeOrcamentaria',
+    'descricaoFuncao',
+    'descricaosubFuncao',
+    'tituloPrograma',
+    'tipoPrograma',
+    'tituloAcao',
+    'descricaoProduto',
+    'descricaoUnidademedida',
+    'descricaolocalizador',
+    'qtdMetaLoa',
+    'projetoLei',
+    'dotacaoInicial',
+    'autorizado',
+    'empenhado',
+    'liquidado',
+    'reprogramadoFisico',
+    'reprogramadoFinanceiro',
+    'realizadoLoa',
+    'pago',
+  ];
+
+  constructor(private service: AcompanhamentoOrcamentarioService) {
+    this.data$ = this.service.list().pipe(
+      catchError((error) => {
+        console.log('Erro ao carregar cursos.');
+        return of([]);
+      })
+    );
+  }
 
   ngOnInit() {}
 }
