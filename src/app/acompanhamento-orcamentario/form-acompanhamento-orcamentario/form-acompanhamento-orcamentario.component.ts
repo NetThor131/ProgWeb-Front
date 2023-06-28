@@ -18,6 +18,36 @@ export class FormAcompanhamentoOrcamentarioComponent {
   tipoPrograma: string = '';
   descricaolocalizador: string = '';
   descricaoUnidadeOrcamentaria: string = '';
+  funcoes: string[] = [
+    'Legislativa',
+    'Judiciária',
+    'Essencial à Justiça',
+    'Administração',
+    'Defesa Nacional',
+    'Segurança Pública',
+    'Relações Exteriores',
+    'Assistência Social',
+    'Previdência Social',
+    'Saúde',
+    'Trabalho',
+    'Educação',
+    'Cultura',
+    'Direitos da Cidadania',
+    'Urbanismo',
+    'Habitação',
+    'Saneamento',
+    'Gestão Ambiental',
+    'Ciência e Tecnologia',
+    'Agricultura',
+    'Organização Agrária',
+    'Indústria',
+    'Comércio e Serviços',
+    'Comunicações',
+    'Energia',
+    'Transporte',
+    'Desporto e Lazer',
+    'Encargos Especiais',
+  ];
 
   data$: Observable<AcompanhamentoOrcamentario[]> = of([]);
 
@@ -52,5 +82,20 @@ export class FormAcompanhamentoOrcamentarioComponent {
     this.tipoPrograma = '';
     this.descricaolocalizador = '';
     this.descricaoUnidadeOrcamentaria = '';
+  }
+
+  filteredFuncoe:any;
+
+  filterFuncoes(event: any) {
+    let filtered: any[] = [];
+    let query = event.query;
+    console.log(query)
+    for (let i = 0; i < (this.funcoes as any[]).length; i++) {
+      let funcao = (this.funcoes as any[])[i];
+      if (funcao.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+        filtered.push(funcao);
+      }
+    }
+    this.filteredFuncoe = filtered;
   }
 }
