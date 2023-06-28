@@ -7,6 +7,7 @@ import { AppPrimengModule } from '../shared/app-primeng';
 import { AcompanhamentoOrcamentarioRoutingModule } from './acompanhamento-orcamentario-routing.module';
 import { AcompanhamentoOrcamentarioComponent } from './acompanhamento-orcamentario.component';
 import { AcompanhamentoOrcamentarioService } from './services';
+import { FormAcompanhamentoOrcamentarioComponent } from './form-acompanhamento-orcamentario/form-acompanhamento-orcamentario.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { AcompanhamentoOrcamentarioService } from './services';
     ReactiveFormsModule,
     AppPrimengModule,
   ],
-  declarations: [AcompanhamentoOrcamentarioComponent],
+  declarations: [AcompanhamentoOrcamentarioComponent, FormAcompanhamentoOrcamentarioComponent],
   providers: [AcompanhamentoOrcamentarioService],
 })
 export class AcompanhamentoOrcamentarioModule {}
