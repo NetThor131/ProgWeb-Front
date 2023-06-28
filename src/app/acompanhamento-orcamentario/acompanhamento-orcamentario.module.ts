@@ -8,7 +8,6 @@ import { AcompanhamentoOrcamentarioRoutingModule } from './acompanhamento-orcame
 import { AcompanhamentoOrcamentarioComponent } from './acompanhamento-orcamentario.component';
 import { FormAcompanhamentoOrcamentarioComponent } from './form-acompanhamento-orcamentario/form-acompanhamento-orcamentario.component';
 import { AcompanhamentoOrcamentarioService } from './services';
-import { FormAcompanhamentoOrcamentarioComponent } from './form-acompanhamento-orcamentario/form-acompanhamento-orcamentario.component';
 
 @NgModule({
   imports: [
