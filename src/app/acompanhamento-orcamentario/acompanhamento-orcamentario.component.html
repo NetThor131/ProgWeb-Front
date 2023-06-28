@@ -1,18 +1,23 @@
 <div *ngIf="data$ | async as data">
-  <table
-    mat-table
-    [dataSource]="data"
-    class="example-container mat-elevation-z8"
+  <p-table
+    [columns]="displayedColumns"
+    [value]="data"
+    responsiveLayout="scroll"
+    [scrollable]="true"
   >
-    <ng-container
-      [matColumnDef]="column"
-      *ngFor="let column of displayedColumns"
-    >
-      <th mat-header-cell *matHeaderCellDef>{{ column }}</th>
-      <td mat-cell *matCellDef="let element">{{ element[column] }}</td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
-  </table>
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns">
+          {{ col }}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr>
+        <td *ngFor="let col of columns">
+          {{ rowData[col] }}
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
 </div>

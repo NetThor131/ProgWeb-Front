@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppMaterialModule } from '../shared/app-material';
+import { AppPrimengModule } from '../shared/app-primeng';
 import { AcompanhamentoOrcamentarioRoutingModule } from './acompanhamento-orcamentario-routing.module';
 import { AcompanhamentoOrcamentarioComponent } from './acompanhamento-orcamentario.component';
 import { AcompanhamentoOrcamentarioService } from './services';
@@ -13,6 +14,7 @@ import { AcompanhamentoOrcamentarioService } from './services';
     AcompanhamentoOrcamentarioRoutingModule,
     AppMaterialModule,
     ReactiveFormsModule,
+    AppPrimengModule,
   ],
   declarations: [AcompanhamentoOrcamentarioComponent],
   providers: [AcompanhamentoOrcamentarioService],
