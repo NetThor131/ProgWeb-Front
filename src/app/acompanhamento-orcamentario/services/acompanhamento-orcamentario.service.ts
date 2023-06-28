@@ -18,4 +18,24 @@ export class AcompanhamentoOrcamentarioService {
         tap((result) => console.log(result))
       );
   }
+
+  listWithParameters(parameter: any) {
+    let params = {
+      descricaoFuncao: parameter.descricaoFuncao,
+      descricaosubFuncao: parameter.descricaosubFuncao,
+      tituloAcao: parameter.tituloAcao,
+      descricaoOrgao: parameter.descricaoOrgao,
+      tituloPrograma: parameter.tituloPrograma,
+      tipoPrograma: parameter.tipoPrograma,
+      descricaolocalizador: parameter.descricaolocalizador,
+      descricaoUnidadeOrcamentaria: parameter.descricaoUnidadeOrcamentaria,
+    };
+
+    return this.httpClient
+      .get<AcompanhamentoOrcamentario[]>(`${this.API}/ObterTodos`, { params })
+      .pipe(
+        first(),
+        tap((result) => console.log(result))
+      );
+  }
 }

@@ -1,4 +1,6 @@
 <p-card>
+  <button pButton label="Filtro" (click)="goToForm()"></button>
+
   <div *ngIf="data$ | async as data">
     <p-table
       [columns]="displayedColumns"

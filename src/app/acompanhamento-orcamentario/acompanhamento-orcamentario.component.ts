@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AcompanhamentoOrcamentarioService } from './services';
+import { Router } from '@angular/router';
 import { catchError, Observable, of } from 'rxjs';
+
+import { AcompanhamentoOrcamentarioService } from './services';
 
 export interface AcompanhamentoOrcamentario {
   id: number;
@@ -63,7 +65,10 @@ export class AcompanhamentoOrcamentarioComponent implements OnInit {
     'pago',
   ];
 
-  constructor(private service: AcompanhamentoOrcamentarioService) {
+  constructor(
+    private service: AcompanhamentoOrcamentarioService,
+    private router: Router
+  ) {
     this.data$ = this.service.list().pipe(
       catchError((error) => {
         console.log('Erro ao carregar cursos.');
@@ -73,4 +78,8 @@ export class AcompanhamentoOrcamentarioComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  goToForm() {
+    this.router.navigate(['/buscar']);
+  }
 }
