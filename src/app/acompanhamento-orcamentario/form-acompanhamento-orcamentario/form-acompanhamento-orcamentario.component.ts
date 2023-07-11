@@ -84,14 +84,14 @@ export class FormAcompanhamentoOrcamentarioComponent {
     this.descricaoUnidadeOrcamentaria = '';
   }
 
-  filteredFuncoe:any;
+  filteredFuncoe: any;
 
   filterFuncoes(event: any) {
     let filtered: any[] = [];
     let query = event.query;
-    console.log(query)
-    for (let i = 0; i < (this.funcoes as any[]).length; i++) {
-      let funcao = (this.funcoes as any[])[i];
+    console.log(query);
+    for (const element of this.funcoes as any[]) {
+      let funcao = element;
       if (funcao.toLowerCase().indexOf(query.toLowerCase()) == 0) {
         filtered.push(funcao);
       }
