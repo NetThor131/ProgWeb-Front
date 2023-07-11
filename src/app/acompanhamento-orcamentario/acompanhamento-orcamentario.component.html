@@ -1,5 +1,5 @@
 <p-card>
-  <button pButton label="Filtro" (click)="goToForm()"></button>
+  <button pButton label="Filtro" routerLink="buscar"></button>
 
   <div *ngIf="data$ | async as data">
     <p-table
