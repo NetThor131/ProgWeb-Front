@@ -1,0 +1,119 @@
+<div style="margin-right: 20%; margin-left: 20%; margin-top: 50px">
+  <p-card header="Buscar">
+    <span
+      class="p-float-label"
+      style="margin-top: 30px; display: flex; flex-direction: column"
+    >
+      <input
+        id="float-input"
+        type="text"
+        pInputText
+        [(ngModel)]="descricaoFuncao"
+      />
+      <label for="float-input">Função</label>
+    </span>
+
+    <span
+      class="p-float-label"
+      style="margin-top: 30px; display: flex; flex-direction: column"
+    >
+      <input
+        id="float-input"
+        type="text"
+        pInputText
+        [(ngModel)]="descricaosubFuncao"
+      />
+      <label for="float-input">Subfunção</label>
+    </span>
+
+    <span
+      class="p-float-label"
+      style="margin-top: 30px; display: flex; flex-direction: column"
+    >
+      <input id="float-input" type="text" pInputText [(ngModel)]="tituloAcao" />
+      <label for="float-input">Ação</label>
+    </span>
+
+    <span
+      class="p-float-label"
+      style="margin-top: 30px; display: flex; flex-direction: column"
+    >
+      <input
+        id="float-input"
+        type="text"
+        pInputText
+        [(ngModel)]="descricaoOrgao"
+      />
+      <label for="float-input">Orgão</label>
+    </span>
+
+    <span
+      class="p-float-label"
+      style="margin-top: 30px; display: flex; flex-direction: column"
+    >
+      <input
+        id="float-input"
+        type="text"
+        pInputText
+        [(ngModel)]="tituloPrograma"
+      />
+      <label for="float-input">Título do Programa</label>
+    </span>
+
+    <span
+      class="p-float-label"
+      style="margin-top: 30px; display: flex; flex-direction: column"
+    >
+      <input
+        id="float-input"
+        type="text"
+        pInputText
+        [(ngModel)]="tipoPrograma"
+      />
+      <label for="float-input">Tipo do Programa</label>
+    </span>
+
+    <span
+      class="p-float-label"
+      style="margin-top: 30px; display: flex; flex-direction: column"
+    >
+      <input
+        id="float-input"
+        type="text"
+        pInputText
+        [(ngModel)]="descricaolocalizador"
+      />
+      <label for="float-input">Localizador</label>
+    </span>
+
+    <span
+      class="p-float-label"
+      style="margin-top: 30px; display: flex; flex-direction: column"
+    >
+      <input
+        id="float-input"
+        type="text"
+        pInputText
+        [(ngModel)]="descricaoUnidadeOrcamentaria"
+      />
+      <label for="float-input">Unidade Orçamentária</label>
+    </span>
+
+    <button
+      pButton
+      style="margin: 10px 10px 0px 0px"
+      type="button"
+      label="Buscar"
+      (click)="onBuscar()"
+    ></button>
+
+    <button
+      pButton
+      style="margin: 10px 10px 0px 0px"
+      class="p-button-secondary"
+      type="button"
+      label="Cancelar"
+      (click)="onCancelar()"
+    ></button>
+  </p-card>
+</div>
