@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { AppPrimengModule } from './shared/app-primeng';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { AppComponent } from './app.component';
     MatToolbarModule,
     HttpClientModule,
     FormsModule,
+    AppPrimengModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
