@@ -3,13 +3,14 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-perguntas',
   templateUrl: './perguntas.component.html',
-  styleUrls: ['./perguntas.component.css']
+  styleUrls: ['./perguntas.component.css'],
 })
 export class PerguntasComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  solution() {
+    console.log('clicado');
   }
-
 }
