@@ -3,16 +3,19 @@ import { Injectable } from '@angular/core';
 import { first, tap } from 'rxjs';
 
 import { AcompanhamentoOrcamentario } from '../acompanhamento-orcamentario.component';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class AcompanhamentoOrcamentarioService {
-  private readonly API = 'api/AcompanhamentoOrcamentario';
+  private readonly API = 'AcompanhamentoOrcamentario';
 
   constructor(private httpClient: HttpClient) {}
 
   list() {
     return this.httpClient
-      .get<AcompanhamentoOrcamentario[]>(`${this.API}/ObterTodos`)
+      .get<AcompanhamentoOrcamentario[]>(
+        `${environment.BASE_URL}/${this.API}/ObterTodos`
+      )
       .pipe(
         first(),
         tap((result) => console.log(result))
@@ -32,7 +35,12 @@ export class AcompanhamentoOrcamentarioService {
     };
 
     return this.httpClient
-      .get<AcompanhamentoOrcamentario[]>(`${this.API}/ObterTodos`, { params })
+      .get<AcompanhamentoOrcamentario[]>(
+        `${environment.BASE_URL}/${this.API}/ObterTodos`,
+        {
+          params,
+        }
+      )
       .pipe(
         first(),
         tap((result) => console.log(result))
