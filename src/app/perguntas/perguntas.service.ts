@@ -9,8 +9,8 @@ export class PerguntasService {
   constructor(private httpClient: HttpClient) {}
 
   consulta(nrQuestao: number) {
-    return this.httpClient
-      .get<any>(`${environment.BASE_URL}/Consultas/${nrQuestao}`)
-      .subscribe((resultado) => console.log(resultado));
+    return this.httpClient.get<any>(
+      `${environment.BASE_URL}/Consultas/${nrQuestao}`
+    );
   }
 }

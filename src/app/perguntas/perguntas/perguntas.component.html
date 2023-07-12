@@ -173,11 +173,16 @@
   </p-card>
 
   <p-dialog
-    header="Header"
+    header="Orçamento"
     [(visible)]="displayBasic"
     [style]="{ width: '50vw' }"
   >
-    <p-table [columns]="cols" [value]="this.data" responsiveLayout="scroll">
+    <p-table
+      *ngIf="this.dados"
+      [columns]="cols"
+      [value]="this.dados"
+      responsiveLayout="scroll"
+    >
       <ng-template pTemplate="header" let-columns>
         <tr>
           <th *ngFor="let col of columns">
@@ -188,7 +193,13 @@
       <ng-template pTemplate="body" let-rowData let-columns="columns">
         <tr>
           <td *ngFor="let col of columns">
-            {{ rowData[col.field] }}
+            <div
+              *ngIf="col.tipo == 'number'; then thenBlock; else elseBlock"
+            ></div>
+            <ng-template #thenBlock>
+              {{ rowData[col.field] | currency }}
+            </ng-template>
+            <ng-template #elseBlock> {{ rowData[col.field] }} </ng-template>
           </td>
         </tr>
       </ng-template>
