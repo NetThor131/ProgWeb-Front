@@ -1,16 +1,17 @@
 <div style="margin-right: 20%; margin-left: 20%; margin-top: 50px">
   <p-card header="Buscar">
     <span
-      class="p-float-label"
-      style="margin-top: 30px; display: flex; flex-direction: column"
+      style="margin-top: 30px;"
     >
-      <input
+      <label for="float-input">Função: </label>
+      <p-autoComplete
         id="float-input"
-        type="text"
-        pInputText
         [(ngModel)]="descricaoFuncao"
-      />
-      <label for="float-input">Função</label>
+        [dropdown]="true"
+        [suggestions]="filteredFuncoe"
+        (completeMethod)="filterFuncoes($event)"
+      >
+      </p-autoComplete>
     </span>
 
     <span
