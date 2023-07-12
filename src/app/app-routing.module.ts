@@ -14,6 +14,10 @@ const routes: Routes = [
         (m) => m.AcompanhamentoOrcamentarioModule
       ),
   },
+  {
+    path: 'perguntas',
+    loadChildren: () => import('./perguntas').then((m) => m.PerguntasModule),
+  },
 ];
 
 @NgModule({

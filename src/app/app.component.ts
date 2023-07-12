@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
         label: 'Acompanhamento Orçamentário',
         routerLink: 'acompanhamento-orcamentario',
       },
+      { label: 'Perguntas', routerLink: 'perguntas' },
       // { label: 'Orgão' },
       // { label: 'SubFunções' },
       // { label: 'Unidade Orçamentária' },
