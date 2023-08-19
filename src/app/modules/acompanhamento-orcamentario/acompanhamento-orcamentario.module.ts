@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AppMaterialModule } from 'src/app/shared/app-material';
+import { AppPrimengModule } from 'src/app/shared/app-primeng';
 
-import { AppMaterialModule } from '../shared/app-material';
-import { AppPrimengModule } from '../shared/app-primeng';
 import { AcompanhamentoOrcamentarioRoutingModule } from './acompanhamento-orcamentario-routing.module';
 import { AcompanhamentoOrcamentarioComponent } from './acompanhamento-orcamentario.component';
-import { FormAcompanhamentoOrcamentarioComponent } from './form-acompanhamento-orcamentario/form-acompanhamento-orcamentario.component';
+import { FormAcompanhamentoOrcamentarioComponent } from './form-acompanhamento-orcamentario';
 import { AcompanhamentoOrcamentarioService } from './services';
 
 @NgModule({

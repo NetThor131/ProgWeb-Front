@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { AppPrimengModule } from 'src/app/shared/app-primeng';
 
-import { AppPrimengModule } from '../shared/app-primeng';
 import { CadastrarComponent } from './components/cadastrar';
 import { EntrarComponent } from './components/entrar';
 import { UsuarioService } from './services';
