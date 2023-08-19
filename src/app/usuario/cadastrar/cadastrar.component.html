@@ -1,1 +1,76 @@
-<p>cadastrar works!</p>
+<div
+  class="flex justify-content-center align-items-center"
+  style="height: 80vh"
+>
+  <p-card>
+    <div class="card">
+      <div class="field">
+        <label for="nome">Nome</label>
+        <input
+          id="nome"
+          class="w-full"
+          type="text"
+          pInputText
+          [(ngModel)]="nome"
+        />
+      </div>
+
+      <div class="field">
+        <label for="sobrenome">Sobrenome</label>
+        <input
+          id="sobrenome"
+          class="w-full"
+          type="text"
+          pInputText
+          [(ngModel)]="sobrenome"
+        />
+      </div>
+
+      <div class="field">
+        <label for="usuario">Usuario</label>
+        <input
+          id="usuario"
+          class="w-full"
+          type="text"
+          pInputText
+          [(ngModel)]="usuario"
+        />
+      </div>
+
+      <div class="field">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          class="w-full"
+          type="email"
+          pInputText
+          [(ngModel)]="email"
+        />
+      </div>
+
+      <div class="field">
+        <label for="senha">Senha</label>
+        <input
+          id="senha"
+          class="w-full"
+          type="password"
+          pInputText
+          [(ngModel)]="senha"
+        />
+      </div>
+    </div>
+
+    <div class="m-2">
+      <button pButton label="Cadastrar"></button>
+
+      <button
+        pButton
+        pRipple
+        type="button"
+        label="Cancelar"
+        class="p-button-secondary"
+        routerLink="/login"
+      ></button>
+    </div>
+  </p-card>
+</div>

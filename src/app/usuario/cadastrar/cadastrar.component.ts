@@ -3,13 +3,16 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-cadastrar',
   templateUrl: './cadastrar.component.html',
-  styleUrls: ['./cadastrar.component.css']
+  styleUrls: ['./cadastrar.component.css'],
 })
 export class CadastrarComponent implements OnInit {
+  nome: string | undefined;
+  sobrenome: string | undefined;
+  usuario: string | undefined;
+  email: string | undefined;
+  senha: string | undefined;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
