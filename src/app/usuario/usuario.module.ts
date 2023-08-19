@@ -1,12 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
+import { AppPrimengModule } from '../shared/app-primeng';
 import { CadastrarComponent } from './cadastrar';
 import { EntrarComponent } from './entrar';
 import { UsuarioRoutingModule } from './usuario-routing.module';
 
 @NgModule({
   declarations: [EntrarComponent, CadastrarComponent],
-  imports: [CommonModule, UsuarioRoutingModule],
+  imports: [CommonModule, UsuarioRoutingModule, AppPrimengModule, FormsModule],
 })
 export class UsuarioModule {}
