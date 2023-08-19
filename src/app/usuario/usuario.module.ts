@@ -10,7 +10,7 @@ import { UsuarioRoutingModule } from './usuario-routing.module';
 
 @NgModule({
   declarations: [EntrarComponent, CadastrarComponent],
-  imports: [CommonModule, UsuarioRoutingModule, AppPrimengModule, FormsModule],
+  imports: [CommonModule, FormsModule, UsuarioRoutingModule, AppPrimengModule],
   providers: [UsuarioService],
 })
 export class UsuarioModule {}

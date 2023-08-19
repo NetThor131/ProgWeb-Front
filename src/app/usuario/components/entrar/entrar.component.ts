@@ -1,14 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
+import { UsuarioService } from '../../services';
 
 @Component({
   selector: 'app-entrar',
   templateUrl: './entrar.component.html',
 })
-export class EntrarComponent implements OnInit {
-  usuario: string | undefined;
-  senha: string | undefined;
+export class EntrarComponent {
+  usuario: string = '';
+  senha: string = '';
 
-  constructor() {}
+  constructor(private usuarioService: UsuarioService) {}
 
-  ngOnInit(): void {}
+  entrar() {
+    this.usuarioService.login(this.usuario, this.senha);
+  }
 }
