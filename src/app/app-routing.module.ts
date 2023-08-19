@@ -9,18 +9,20 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./usuario').then((m) => m.UsuarioModule),
+    loadChildren: () =>
+      import('./modules/usuario').then((m) => m.UsuarioModule),
   },
   {
     path: 'acompanhamento-orcamentario',
     loadChildren: () =>
-      import('./acompanhamento-orcamentario').then(
+      import('./modules/acompanhamento-orcamentario').then(
         (m) => m.AcompanhamentoOrcamentarioModule
       ),
   },
   {
     path: 'perguntas',
-    loadChildren: () => import('./perguntas').then((m) => m.PerguntasModule),
+    loadChildren: () =>
+      import('./modules/perguntas').then((m) => m.PerguntasModule),
   },
 ];
 
