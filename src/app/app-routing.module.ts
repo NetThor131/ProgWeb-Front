@@ -5,7 +5,11 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'acompanhamento-orcamentario',
+    redirectTo: 'login',
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./usuario').then((m) => m.UsuarioModule),
   },
   {
     path: 'acompanhamento-orcamentario',
