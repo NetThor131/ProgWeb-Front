@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CadastrarComponent } from './cadastrar';
-import { EntrarComponent } from './entrar';
+import { CadastrarComponent } from './components/cadastrar';
+import { EntrarComponent } from './components/entrar';
 
 const routes: Routes = [
   { path: '', component: EntrarComponent },

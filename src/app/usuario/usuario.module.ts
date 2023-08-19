@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppPrimengModule } from '../shared/app-primeng';
-import { CadastrarComponent } from './cadastrar';
-import { EntrarComponent } from './entrar';
+import { CadastrarComponent } from './components/cadastrar';
+import { EntrarComponent } from './components/entrar';
 import { UsuarioRoutingModule } from './usuario-routing.module';
 
 @NgModule({
