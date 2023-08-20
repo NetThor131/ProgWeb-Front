@@ -14,6 +14,10 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.items = [
       {
+        label: 'Cadastrar Usuário',
+        routerLink: 'login/cadastrar',
+      },
+      {
         label: 'Acompanhamento Orçamentário',
         routerLink: 'acompanhamento-orcamentario',
       },
