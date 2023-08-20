@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { Observable, map } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { LocalizacaoService } from 'src/app/core/services';
 
@@ -7,8 +7,12 @@ import { LocalizacaoService } from 'src/app/core/services';
   templateUrl: './localizacao.component.html',
 })
 export class LocalizacaoComponent implements OnInit {
+  data$!: Observable<any[]>;
+
   latitude: number = 0;
   longitude: number = 0;
+
+  displayedColumns = ['descricaoLocalizacao', 'count'];
 
   constructor(private localizacaoService: LocalizacaoService) {}
 
@@ -37,13 +41,6 @@ export class LocalizacaoComponent implements OnInit {
   }
 
   obterLocalizacao() {
-    this.localizacaoService.obterLocalizacao().subscribe(
-      (response) => {
-        console.log(response);
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+    this.data$ = this.localizacaoService.obterLocalizacao();
   }
 }

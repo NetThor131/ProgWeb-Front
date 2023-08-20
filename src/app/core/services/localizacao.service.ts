@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
@@ -55,6 +56,6 @@ export class LocalizacaoService {
   }
 
   obterLocalizacao() {
-    return this.httpClient.get(`${this.apiUrl}/Obter`);
+    return this.httpClient.get<any[]>(`${this.apiUrl}/Obter`);
   }
 }
