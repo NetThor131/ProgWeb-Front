@@ -24,6 +24,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./modules/perguntas').then((m) => m.PerguntasModule),
   },
+  {
+    path: 'localizacao',
+    loadChildren: () =>
+      import('./modules/localizacao').then((m) => m.LocalizacaoModule),
+  },
 ];
 
 @NgModule({
