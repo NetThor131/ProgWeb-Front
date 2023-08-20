@@ -5,18 +5,29 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'acompanhamento-orcamentario',
+    redirectTo: 'login',
+  },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./modules/usuario').then((m) => m.UsuarioModule),
   },
   {
     path: 'acompanhamento-orcamentario',
     loadChildren: () =>
-      import('./acompanhamento-orcamentario').then(
+      import('./modules/acompanhamento-orcamentario').then(
         (m) => m.AcompanhamentoOrcamentarioModule
       ),
   },
   {
     path: 'perguntas',
-    loadChildren: () => import('./perguntas').then((m) => m.PerguntasModule),
+    loadChildren: () =>
+      import('./modules/perguntas').then((m) => m.PerguntasModule),
+  },
+  {
+    path: 'localizacao',
+    loadChildren: () =>
+      import('./modules/localizacao').then((m) => m.LocalizacaoModule),
   },
 ];
 

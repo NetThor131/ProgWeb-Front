@@ -1,0 +1,38 @@
+<div
+  class="flex justify-content-center align-items-center"
+  style="height: 80vh"
+>
+  <p-card>
+    <div class="card">
+      <div class="field">
+        <label for="usuario">Usuario</label>
+        <input
+          id="usuario"
+          class="w-full"
+          type="text"
+          pInputText
+          [(ngModel)]="usuario"
+        />
+      </div>
+
+      <div class="field">
+        <label for="senha">Senha</label>
+        <input
+          id="senha"
+          class="w-full"
+          type="password"
+          pInputText
+          [(ngModel)]="senha"
+        />
+      </div>
+
+      <button
+        pButton
+        class="m-2"
+        label="Entrar"
+        type="submit"
+        (click)="entrar()"
+      ></button>
+    </div>
+  </p-card>
+</div>
