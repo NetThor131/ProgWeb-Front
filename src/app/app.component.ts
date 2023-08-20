@@ -10,6 +10,8 @@ export class AppComponent implements OnInit {
 
   activeItem!: MenuItem;
 
+  constructor() {}
+
   ngOnInit() {
     this.items = [
       {
