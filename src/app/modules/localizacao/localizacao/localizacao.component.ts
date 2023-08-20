@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { LocalizacaoService } from 'src/app/core/services';
 
 @Component({
   selector: 'app-localizacao',
@@ -8,7 +10,7 @@ export class LocalizacaoComponent implements OnInit {
   latitude: number = 0;
   longitude: number = 0;
 
-  constructor() {}
+  constructor(private localizacaoService: LocalizacaoService) {}
 
   ngOnInit() {
     if ('geolocation' in navigator) {
@@ -19,6 +21,11 @@ export class LocalizacaoComponent implements OnInit {
 
           console.log('Latitude:', this.latitude);
           console.log('Longitude:', this.longitude);
+
+          this.localizacaoService.getCidadeEstadoPais(
+            this.latitude,
+            this.longitude
+          );
         },
         (error) => {
           console.error('Erro ao obter a localização:', error);
@@ -27,5 +34,16 @@ export class LocalizacaoComponent implements OnInit {
     } else {
       console.warn('Geolocalização não suportada pelo navegador.');
     }
+  }
+
+  obterLocalizacao() {
+    this.localizacaoService.obterLocalizacao().subscribe(
+      (response) => {
+        console.log(response);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
   }
 }
