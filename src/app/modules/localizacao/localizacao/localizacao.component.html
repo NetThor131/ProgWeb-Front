@@ -6,33 +6,10 @@
     (click)="obterLocalizacao()"
   ></button>
 
-  <div *ngIf="data$ | async as data">
-    <p-table
-      [columns]="displayedColumns"
-      [value]="data"
-      responsiveLayout="scroll"
-      [scrollable]="true"
-    >
-      <ng-template pTemplate="header" let-columns>
-        <tr>
-          <th *ngFor="let col of columns">
-            {{ col }}
-          </th>
-        </tr>
-      </ng-template>
-
-      <ng-template pTemplate="body" let-rowData let-columns="columns">
-        <tr>
-          <td *ngFor="let col of columns">
-            {{ rowData[col] }}
-          </td>
-        </tr>
-      </ng-template>
-    </p-table>
-  </div>
   <p-gmap
+    *ngIf="showMap"
     [options]="options"
     [overlays]="overlays"
-    [style]="{ width: '80%', height: '600px' }"
+    [style]="{ width: '100%', height: '600px' }"
   ></p-gmap>
 </p-card>

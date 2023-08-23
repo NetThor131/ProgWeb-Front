@@ -89,7 +89,7 @@ export class FormAcompanhamentoOrcamentarioComponent {
   filterFuncoes(event: any) {
     let filtered: any[] = [];
     let query = event.query;
-    console.log(query);
+    // console.log(query);
     for (const element of this.funcoes as any[]) {
       let funcao = element;
       if (funcao.toLowerCase().indexOf(query.toLowerCase()) == 0) {

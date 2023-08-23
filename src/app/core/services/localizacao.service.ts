@@ -47,7 +47,7 @@ export class LocalizacaoService {
 
     return this.httpClient.post(`${this.apiUrl}/Adicionar`, body).subscribe(
       (response) => {
-        console.log(response);
+        // console.log(response);
       },
       (error) => {
         console.error(error);

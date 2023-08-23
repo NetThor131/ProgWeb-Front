@@ -12,14 +12,9 @@ export class AcompanhamentoOrcamentarioService {
   constructor(private httpClient: HttpClient) {}
 
   list() {
-    return this.httpClient
-      .get<AcompanhamentoOrcamentario[]>(
-        `${environment.BASE_URL}/${this.API}/ObterTodos`
-      )
-      .pipe(
-        first(),
-        tap((result) => console.log(result))
-      );
+    return this.httpClient.get<AcompanhamentoOrcamentario[]>(
+      `${environment.BASE_URL}/${this.API}/ObterTodos`
+    );
   }
 
   listWithParameters(parameter: any) {
@@ -34,16 +29,11 @@ export class AcompanhamentoOrcamentarioService {
       descricaoUnidadeOrcamentaria: parameter.descricaoUnidadeOrcamentaria,
     };
 
-    return this.httpClient
-      .get<AcompanhamentoOrcamentario[]>(
-        `${environment.BASE_URL}/${this.API}/ObterTodos`,
-        {
-          params,
-        }
-      )
-      .pipe(
-        first(),
-        tap((result) => console.log(result))
-      );
+    return this.httpClient.get<AcompanhamentoOrcamentario[]>(
+      `${environment.BASE_URL}/${this.API}/ObterTodos`,
+      {
+        params,
+      }
+    );
   }
 }

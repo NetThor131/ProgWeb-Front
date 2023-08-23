@@ -27,7 +27,7 @@ export class PerguntasComponent implements OnInit {
   solution(nrQuestao: number) {
     this.service.consulta(nrQuestao).subscribe((response) => {
       this.dados = response;
-      console.log(response);
+      // console.log(response);
     });
 
     switch (nrQuestao) {

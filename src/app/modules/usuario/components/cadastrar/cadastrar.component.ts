@@ -20,7 +20,7 @@ export class CadastrarComponent {
     return this.usuarioService
       .cadastro(this.usuario, this.email, this.senha)
       .subscribe((response) => {
-        console.log(response);
+        // console.log(response);
         this.router.navigate(['login']);
       });
   }
