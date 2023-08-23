@@ -1,7 +1,7 @@
 const PROXY_CONFIG = [
   {
     context: ['/api'],
-    target: 'http://54.147.45.160/',
+    target: 'http://pweb-api.duckdns.org/',
     secure: false,
     loglevel: 'debug',
     pathRewrite: {'^/api' : ''}
