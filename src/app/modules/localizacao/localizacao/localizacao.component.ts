@@ -14,6 +14,12 @@ export class LocalizacaoComponent implements OnInit {
 
   displayedColumns = ['descricaoLocalizacao', 'count'];
 
+  locations: any[] = [];
+
+  options: any;
+
+  overlays: any[] = [];
+
   constructor(private localizacaoService: LocalizacaoService) {}
 
   ngOnInit() {
@@ -25,6 +31,8 @@ export class LocalizacaoComponent implements OnInit {
 
           console.log('Latitude:', this.latitude);
           console.log('Longitude:', this.longitude);
+
+          this.locations = [{ lat: this.latitude, lng: this.longitude }];
 
           this.localizacaoService.getCidadeEstadoPais(
             this.latitude,
@@ -38,6 +46,18 @@ export class LocalizacaoComponent implements OnInit {
     } else {
       console.warn('Geolocalização não suportada pelo navegador.');
     }
+
+    this.options = {
+      center: { lat: -14, lng: -51 },
+      zoom: 5,
+    };
+
+    this.overlays = this.locations.map(
+      (location) =>
+        new google.maps.Marker({
+          position: { lat: location.lat, lng: location.lng },
+        })
+    );
   }
 
   obterLocalizacao() {
