@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { LocalizacaoService } from 'src/app/core/services';
 
@@ -28,6 +29,7 @@ export class LocalizacaoComponent implements OnInit {
 
           // console.log('Latitude:', this.latitude);
           // console.log('Longitude:', this.longitude);
+
 
           this.localizacaoService.getCidadeEstadoPais(
             this.latitude,
@@ -73,5 +75,6 @@ export class LocalizacaoComponent implements OnInit {
     );
 
     this.showMap = true;
+
   }
 }

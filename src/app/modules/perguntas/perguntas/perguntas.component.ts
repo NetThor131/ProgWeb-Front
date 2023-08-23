@@ -28,6 +28,7 @@ export class PerguntasComponent implements OnInit {
     this.service.consulta(nrQuestao).subscribe((response) => {
       this.dados = response;
       // console.log(response);
+
     });
 
     switch (nrQuestao) {
